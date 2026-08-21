@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Major Contributor Volunteer Form</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container nav-wrap">
+        <a href="index.html#home" class="brand" aria-label="Go to homepage">
+          <span class="brand-mark"><img src="infant in bassinet.png" alt="Infant in bassinet logo" /></span>
+          <div>
+            <p class="brand-name">Infant Relinquishment</p>
+            <p class="brand-tag">The Untold Herstory</p>
+          </div>
+        </a>
+        <nav class="main-nav" aria-label="Main navigation">
+          <a href="index.html">Home</a>
+          <a href="index.html#about">About</a>
+          <a href="index.html#volunteer">Volunteer</a>
+          <a href="index.html#contact">Contact</a>
+          <a href="index.html#remember">Do You Remember?</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="content-section form-page">
+      <div class="container narrow">
+        <a class="back-link" href="index.html#volunteer">← Back to home</a>
+        <h1>Major Contributor Volunteer Form</h1>
+
+        <form class="volunteer-form">
+          <div class="form-row">
+            <label>Name<input type="text" name="name" /></label>
+            <label>Email<input type="email" name="email" /></label>
+            <label>Phone<input type="tel" name="phone" /></label>
+          </div>
+          <div class="form-row single">
+            <label>Are you a birthparent<input type="text" name="birthparent" /></label>
+          </div>
+          <div>
+            <label>Connection to the birthparent community<input type="text" name="connection" /></label>
+          </div>
+          <div class="form-row single">
+            <label>How would you like to help? (Role)<input type="text" name="role" /></label>
+          </div>
+          <div class="form-row single">
+            <label>Goal in participation<input type="text" name="goal" /></label>
+          </div>
+          <div class="form-row single">
+            <label>Qualifications<input type="text" name="qualifications" /></label>
+          </div>
+          <div class="form-row single">
+            <label>How much time could you devote to this project?<input type="text" name="time" /></label>
+          </div>
+          <div class="form-row single">
+            <label>What else should we know?<textarea name="notes" rows="4"></textarea></label>
+          </div>
+          <div class="form-row single">
+            <label>How do you prefer to be contacted?<input type="text" name="contact" /></label>
+          </div>
+          <button type="submit" class="button primary">Submit</button>
+        </form>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <p>Infant Relinquishment: The Untold Herstory</p>
+        <p>Preserving history, honoring voices, and advancing change.</p>
+      </div>
+    </footer>
+  </body>
+</html>
