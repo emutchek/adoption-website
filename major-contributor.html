@@ -69,6 +69,7 @@
           </div>
           <button type="submit" class="button primary">Submit</button>
         </form>
+        <p class="form-status" aria-live="polite"></p>
       </div>
     </main>
 
@@ -78,5 +79,39 @@
         <p>Preserving history, honoring voices, and advancing change.</p>
       </div>
     </footer>
+
+    <script>
+      const volunteerForm = document.querySelector(".volunteer-form");
+      const formStatus = document.querySelector(".form-status");
+
+      volunteerForm.addEventListener("submit", async (event) => {
+        event.preventDefault();
+
+        const formData = new FormData(volunteerForm);
+        const formContent = Object.fromEntries(formData.entries());
+
+        formStatus.textContent = "Submitting...";
+
+        try {
+          const response = await fetch(volunteerForm.action, {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(formContent),
+          });
+
+          if (!response.ok) {
+            throw new Error(`Request failed with status ${response.status}`);
+          }
+
+          volunteerForm.reset();
+          formStatus.textContent = "Thank you. Your response was submitted.";
+        } catch (error) {
+          console.error(error);
+          formStatus.textContent = "Something went wrong. Please try again.";
+        }
+      });
+    </script>
   </body>
 </html>
