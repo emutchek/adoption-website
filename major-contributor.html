@@ -38,16 +38,17 @@
         <h1>Major Contributor Volunteer Form</h1>
 
         <form class="volunteer-form" action="https://prod-00.northcentralus.logic.azure.com:443/workflows/ca2268df60344a098a848aa9bffd8075/triggers/When_an_HTTP_request_is_received/paths/invoke?api-version=2016-10-01&amp;sp=%2Ftriggers%2FWhen_an_HTTP_request_is_received%2Frun&amp;sv=1.0&amp;sig=DUn_KE2RCvFxlqcWe5Ihr98Yq3vsPEJ6nrI99veUB80" method="post">
+          <p class="form-status" aria-live="polite"></p>
           <div class="form-row">
             <label>Name<input type="text" name="name" /></label>
             <label>Email<input type="email" name="email" /></label>
             <label>Phone<input type="tel" name="phone" /></label>
           </div>
           <div class="form-row single">
-            <label>Are you a birthparent<input type="text" name="birthparent" /></label>
+            <label>Are you a birth parent?<input type="text" name="birthparent" /></label>
           </div>
           <div>
-            <label>Connection to the birthparent community<input type="text" name="connection" /></label>
+            <label>Connection to the birth parent community<input type="text" name="connection" /></label>
           </div>
           <div class="form-row single">
             <label>How would you like to help? (Role)<input type="text" name="role" /></label>
@@ -69,7 +70,7 @@
           </div>
           <button type="submit" class="button primary">Submit</button>
         </form>
-        <p class="form-status" aria-live="polite"></p>
+        
       </div>
     </main>
 
@@ -91,6 +92,7 @@
         const formContent = Object.fromEntries(formData.entries());
 
         formStatus.textContent = "Submitting...";
+        window.scrollTo({ top: 0, behavior: "smooth" });
 
         try {
           const response = await fetch(volunteerForm.action, {
@@ -106,7 +108,7 @@
           }
 
           volunteerForm.reset();
-          formStatus.textContent = "Thank you. Your response was submitted.";
+          formStatus.textContent = "Thank you! Your response was submitted.";
         } catch (error) {
           console.error(error);
           formStatus.textContent = "Something went wrong. Please try again.";
