@@ -36,19 +36,55 @@
       <div class="container narrow">
         <a class="back-link" href="index.html#volunteer">← Back to home</a>
         <h1>Father Interview Form</h1>
-        <p class="lead">Template coming soon. This page is reserved for the father interview intake.</p>
-        <form class="volunteer-form">
+        <form class="volunteer-form" action="https://prod-28.northcentralus.logic.azure.com:443/workflows/b2709a3a16d74377bb3ed95d61d126d7/triggers/When_an_HTTP_request_is_received/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2FWhen_an_HTTP_request_is_received%2Frun&sv=1.0&sig=wqs-eW-V91npZQ5i92dIYisogp2kp4B1i96R1trclHk" method="post">
+          <p class="form-status" aria-live="polite"></p>
           <div class="form-row">
             <label>Name<input type="text" name="name" /></label>
             <label>Email<input type="email" name="email" /></label>
           </div>
           <div class="form-row single">
-            <label>Availability and preferred contact details<textarea name="availability" rows="4"></textarea></label>
+            <label>Availability and preferred interview method<textarea name="availability" rows="2"></textarea></label>
           </div>
+          <p>Your reponses will be emailed to the address you've provided.</p>
           <button type="submit" class="button primary">Submit</button>
         </form>
       </div>
     </main>
+
+    <script>
+      const volunteerForm = document.querySelector(".volunteer-form");
+      const formStatus = document.querySelector(".form-status");
+
+      volunteerForm.addEventListener("submit", async (event) => {
+        event.preventDefault();
+
+        const formData = new FormData(volunteerForm);
+        const formContent = Object.fromEntries(formData.entries());
+
+        formStatus.textContent = "Submitting...";
+        window.scrollTo({ top: 0, behavior: "smooth" });
+
+        try {
+          const response = await fetch(volunteerForm.action, {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(formContent),
+          });
+
+          if (!response.ok) {
+            throw new Error(`Request failed with status ${response.status}`);
+          }
+
+          volunteerForm.reset();
+          formStatus.textContent = "Thank you! Your response was submitted.";
+        } catch (error) {
+          console.error(error);
+          formStatus.textContent = "Something went wrong. Please try again.";
+        }
+      });
+    </script>
 
     <footer class="site-footer">
       <div class="container footer-inner">
