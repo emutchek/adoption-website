@@ -266,6 +266,11 @@ h3 {
   padding: 4rem 0;
 }
 
+.blue-underline {
+  text-decoration: underline;
+  text-decoration-color: white;
+}
+
 .content-section.alt {
   background: rgba(255, 255, 255, 0.45);
   border-top: 1px solid var(--line);

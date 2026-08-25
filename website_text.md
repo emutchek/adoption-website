@@ -2,8 +2,8 @@ InfantRelinquishmentHistory.com – website
 Home Page
 Infant Relinquishment: The Untold History
 	During the 1960s hundreds of thousands of women, mostly young and unmarried, relinquished their infants to adoption and social service agencies. These women were shamed, silenced, and isolated. This important part of history remains untold and unshared today. It is time to change this NOW … failed practices of the past echo today in our sons and daughters and in current processes of adoption and assisted reproduction.  The women who can tell the story are dying off. We need your help NOW to make our voices heard.   
-WE are the women of Infant Relinquishment: The Untold Herstory.
-The mission of Infant Relinquishment: The Untold Herstory is to create an archive of our experiences to preserve this chapter in history and to provide data for advocating for legal and social change.  This archive may be used for a book for the general public or as a tool for research. 
+WE are the women of Infant Relinquishment: The Untold History.
+The mission of Infant Relinquishment: The Untold History is to create an archive of our experiences to preserve this chapter in history and to provide data for advocating for legal and social change.  This archive may be used for a book for the general public or as a tool for research. 
 Tabs
 About
 Volunteer
