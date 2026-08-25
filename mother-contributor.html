@@ -149,6 +149,7 @@
               <input type="checkbox" name="contact_clarification" />
             </label>
             </div>
+            <p>Your reponses will be emailed to the address you've provided.</p>
           <button type="submit" class="button primary">Submit</button>
         </form>
 
@@ -159,6 +160,7 @@
       <div class="container footer-inner">
         <p>Infant Relinquishment: The Untold History</p>
         <p>Preserving history, honoring voices, and advancing change.</p>
+        <p>Contact: info@infantrelinquishmenthistory.org</p>
       </div>
     </footer>
 
@@ -189,7 +191,20 @@
           }
 
           volunteerForm.reset();
-          formStatus.textContent = "Thank you! Your response was submitted.";
+          formStatus.textContent = "Thank you! Your response was submitted and emailed to you for reference.";
+          volunteerForm.classList.add("submitted");
+
+          const resubmitButton = document.createElement("button");
+          resubmitButton.type = "button";
+          resubmitButton.className = "button primary resubmit-button";
+          resubmitButton.textContent = "New submission";
+          resubmitButton.addEventListener("click", () => {
+            volunteerForm.reset();
+            formStatus.textContent = "";
+            volunteerForm.classList.remove("submitted");
+            resubmitButton.remove();
+          });
+          volunteerForm.append(resubmitButton);
         } catch (error) {
           console.error(error);
           formStatus.textContent = "Something went wrong. Please try again.";

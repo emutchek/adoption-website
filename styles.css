@@ -286,6 +286,33 @@ h3 {
   color: inherit;
 }
 
+.volunteer-form.submitted {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 14rem;
+  text-align: center;
+}
+
+.volunteer-form.submitted > * {
+  display: none;
+}
+
+.volunteer-form.submitted > .form-status,
+.volunteer-form.submitted > .resubmit-button {
+  display: block;
+}
+
+.volunteer-form.submitted > .form-status {
+  margin-bottom: 1.2rem;
+}
+
+.volunteer-form.submitted > .resubmit-button {
+  border: 0;
+  cursor: pointer;
+}
+
 p {
   margin: 0 0 1.2rem;
   color: var(--text);
