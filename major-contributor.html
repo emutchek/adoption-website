@@ -94,6 +94,7 @@
 
         const formData = new FormData(volunteerForm);
         const formContent = Object.fromEntries(formData.entries());
+        formContent.datetime = new Date().toISOString();
 
         formStatus.textContent = "Submitting...";
         window.scrollTo({ top: 0, behavior: "smooth" });
